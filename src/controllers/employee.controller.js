@@ -1,5 +1,10 @@
 const pool = require('../db')
 
+const index = async (req, res) => {
+  res.json({
+      API: "Empleados"
+  });
+};
 
 const getAllEmployees = async (req, res, next) => {
     try {
@@ -93,6 +98,7 @@ const deleteEmployee = async (req, res, next) => {
 }
 
 module.exports = {
+    index,
     getAllEmployees,
     getEmployee,
     createEmployee,

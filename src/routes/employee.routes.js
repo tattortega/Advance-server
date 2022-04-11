@@ -1,6 +1,8 @@
 const { Router } = require('express');
-const { getAllEmployees, getEmployee, createEmployee, updateEmployee, deleteEmployee } = require('../controllers/employee.controller');
+const { getAllEmployees, getEmployee, createEmployee, updateEmployee, deleteEmployee, index } = require('../controllers/employee.controller');
 const router = Router();
+
+router.get('/', index)
 
 router.get('/employees', getAllEmployees)
 
