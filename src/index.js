@@ -5,9 +5,6 @@ const cors = require('cors');
 const router = require('./routes/employee.routes')
 require('dotenv').config();
 
-// Settings
-app.set("port", process.env.PORT || 4000);
-
 // Middlewares
 app.use(morgan('dev'));
 app.use(cors());
@@ -25,5 +22,7 @@ app.use((err, req, res, next) => {
     });
 });
 
-app.listen(app.get("port"));
-console.log('Server on port', app.get("port"));
+const PORT = process.env.PORT || 4000;
+app.listen(PORT, () => {
+    console.log(`servidor andando en: ${PORT}`)
+})
